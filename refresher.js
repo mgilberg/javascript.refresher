@@ -67,6 +67,7 @@
 //     }
 // }
 // let y = 5;
+// hi();
 // function hi() {
 //     let x = 10;
 //     console.log(y + x);
