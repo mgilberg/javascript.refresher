@@ -49,11 +49,25 @@
 //     console.log("You are " + age + " years old.");
 
 // }
-makePizza("pepperoni", "small");
-makePizza("broccoli", "large");
+// makePizza("pepperoni", "small");
+// makePizza("broccoli", "large");
 
-function makePizza(type,size) {
-    console.log("One " + size + " " + type + " pizza coming up!");
-}
+// function makePizza(type,size) {
+//     console.log("One " + size + " " + type + " pizza coming up!");
+// }
 
+// pricePizza("large");
+// pricePizza("small");
 
+// function pricePizza(type) {
+//     if (type == 'large') {
+//         console.log("17")
+//     } else if (type == 'small') {
+//         console.log("13");
+//     }
+// }
+// let y = 5;
+// function hi() {
+//     let x = 10;
+//     console.log(y + x);
+// }
