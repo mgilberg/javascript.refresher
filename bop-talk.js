@@ -19,28 +19,28 @@ let bopMessage = inputMessage;
 let letterB = "b";
 
 if (inputMessage.includes(letterB)) {
-    let newB = bopMessage.replace("b","bop");
+    let newB = bopMessage.replace(/b/g,"bop");
     bopMessage = newB;
 }
 
 let letterC = "c";
 
 if (inputMessage.includes(letterC)) {
-    let newC = bopMessage.replace("c","cop");
+    let newC = bopMessage.replace(/c/g,"cop");
     bopMessage = newC;
 } 
 
 let letterD = "d";
 
 if (inputMessage.includes(letterD)) {
-    let newD = bopMessage.replace("d","dop");
+    let newD = bopMessage.replace(/d/g,"dop");
     bopMessage = newD;
 } 
 
 let letterF = "F";
 
 if (inputMessage.includes(letterF)) {
-    let newF = bopMessage.replace("f","fop");
+    let newF = bopMessage.replace(/f/g,"fop");
     bopMessage = newF;
 } 
 
@@ -82,7 +82,7 @@ if (inputMessage.includes(letterL)) {
 let letterT = "t";
 
 if (inputMessage.includes(letterT)) {
-    let newT = bopMessage.replace("t","top");
+    let newT = bopMessage.replace(/t/g,"top");
     bopMessage = newT;
 } 
 
@@ -96,14 +96,14 @@ if (inputMessage.includes(letterS)) {
 let letterW = "w";
 
 if (inputMessage.includes(letterW)) {
-    let newW = bopMessage.replace("w","wop");
+    let newW = bopMessage.replace(/w/g,"wop");
     bopMessage = newW;
 }
 
 let letterR = "r";
 
 if (inputMessage.includes(letterR)) {
-    let newR = bopMessage.replace("r","rop");
+    let newR = bopMessage.replace(/r/g,"rop");
     bopMessage = newR;
 } 
 
