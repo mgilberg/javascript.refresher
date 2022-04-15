@@ -1,12 +1,6 @@
 let playerTurn = 1;
 let pick1;
 let pick2;
-// let dot = 0;
-// let noDot = 0;
-// let razorback = 0;
-// let trotter = 0;
-// let snouter = 0;
-// let leaningJowler = 0;
 let score = 0;
 let pig1;
 let pig2;
@@ -14,6 +8,8 @@ let totalScore1 = 0;
 let totalScore2 = 0;
 let totalScore3 = 0;
 let totalScore4 = 0;
+
+//I am having an issue with my score = 0 
 
 
 // disables pass button for start
@@ -131,7 +127,7 @@ function handleClick(id) {
         document.getElementById("player3Pig2").textContent=pig2;
     }
 
-    if (pig1 == "Dot" && pig2 == "No Dot" || pig2 == "Dot" && pig1 == "No Dot") {
+    if (pig1 == "Dot" && pig2 == "No Dot" || pig2 == "Dot" && pig1 == "No Dot") { // will turn this code into function later
         
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent="PIG OUT!";
