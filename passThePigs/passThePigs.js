@@ -51,17 +51,17 @@ function pass(num,num2,a,b,c,d) {
     }
 
     score = 0;
-    console.log(score);
-    if (playerTurn == 2) {
+    
+    if (playerTurn == 1) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore1;
         document.getElementById("player0HandScore").textContent= "Score: " + score;
-    } else if (playerTurn == 3) {
+    } else if (playerTurn == 2) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore2;
         document.getElementById("player1HandScore").textContent= "Score: " + score;
-    } else if (playerTurn == 4) {
+    } else if (playerTurn == 3) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore3;
         document.getElementById("player2HandScore").textContent= "Score: " + score;
-    } else if (playerTurn == 1) {
+    } else if (playerTurn == 4) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore4;
         document.getElementById("player3HandScore").textContent= "Score: " + score;
     }
