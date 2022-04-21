@@ -9,8 +9,6 @@ let totalScore2 = 0;
 let totalScore3 = 0;
 let totalScore4 = 0;
 
-//I am having an issue with my score = 0 
-
 
 // disables pass button for start
 document.getElementById("player0PassButton").disabled = false;
@@ -40,21 +38,34 @@ function pass(num,num2,a,b,c,d) {
     document.getElementById("player1RollButton").disabled = b;
     document.getElementById("player2RollButton").disabled = c;
     document.getElementById("player3RollButton").disabled = d;
+    
 
     if (playerTurn == 1) {
         totalScore1 = totalScore1 + score;
-        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore1;
     } else if (playerTurn == 2) {
         totalScore2 = totalScore2 + score;
-        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore2;
     } else if (playerTurn == 3) {
         totalScore3 = totalScore3 + score;
-        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore3;
     } else if (playerTurn == 4) {
         totalScore4 = totalScore4 + score;
-        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore4;
     }
+
     score = 0;
+    console.log(score);
+    if (playerTurn == 2) {
+        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore1;
+        document.getElementById("player0HandScore").textContent= "Score: " + score;
+    } else if (playerTurn == 3) {
+        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore2;
+        document.getElementById("player1HandScore").textContent= "Score: " + score;
+    } else if (playerTurn == 4) {
+        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore3;
+        document.getElementById("player2HandScore").textContent= "Score: " + score;
+    } else if (playerTurn == 1) {
+        document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore4;
+        document.getElementById("player3HandScore").textContent= "Score: " + score;
+    }
+    
 }
 
 function handleClick(id) {
@@ -129,8 +140,9 @@ function handleClick(id) {
 
     if (pig1 == "Dot" && pig2 == "No Dot" || pig2 == "Dot" && pig1 == "No Dot") { // will turn this code into function later
         
+        score = 0;
         if (id == "player0RollButton") {
-            document.getElementById("player0HandScore").textContent="PIG OUT!";
+            document.getElementById("player0HandScore").textContent = "PIG OUT!";
             pass(0,1,true,false,true,true);
         } else if (id == "player1RollButton") {
             document.getElementById("player1HandScore").textContent="PIG OUT!";
@@ -145,8 +157,7 @@ function handleClick(id) {
         score = 0;
         playerTurn = playerTurn + 1;
 
-    } 
-    if (pig1 == "Dot" && pig2 == "Dot" || pig1 == "No Dot" && pig2 == "No Dot" || pig1 == "Dot" || pig2 == "Dot" || pig1 == "No Dot" || pig2 == "No Dot") {
+    } else if (pig1 == "Dot" && pig2 == "Dot" || pig1 == "No Dot" && pig2 == "No Dot" || pig1 == "Dot" || pig2 == "Dot" || pig1 == "No Dot" || pig2 == "No Dot") {
         score = score + 1;
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent= "Score: " + score;
@@ -193,7 +204,20 @@ function handleClick(id) {
         } else if (id == "player3RollButton") {
             document.getElementById("player3HandScore").textContent= "Score: " + score;
         }
-    } 
+    } else if (pig1 == "Snouter" || pig2 == "Snouter" ) {
+        score = score + 10;
+        if (id == "player0RollButton") {
+            document.getElementById("player0HandScore").textContent= "Score: " + score;
+        } else if (id == "player1RollButton") {
+            document.getElementById("player1HandScore").textContent= "Score: " + score;
+        } else if (id == "player2RollButton") {
+            document.getElementById("player2HandScore").textContent= "Score: " + score;
+        } else if (id == "player3RollButton") {
+            document.getElementById("player3HandScore").textContent= "Score: " + score;
+        }
+    }  
+
+
     if (pig1 == "Leaning Jowler" && pig2 == "Leaning Jowler") {
         score = score + 60;
         if (id == "player0RollButton") {
@@ -205,21 +229,7 @@ function handleClick(id) {
         } else if (id == "player3RollButton") {
             document.getElementById("player3HandScore").textContent= "Score: " + score;
         }
-    } 
-    
-    if (pig1 == "Snouter" || pig2 == "Snouter" ) {
-        score = score + 10;
-        if (id == "player0RollButton") {
-            document.getElementById("player0HandScore").textContent= "Score: " + score;
-        } else if (id == "player1RollButton") {
-            document.getElementById("player1HandScore").textContent= "Score: " + score;
-        } else if (id == "player2RollButton") {
-            document.getElementById("player2HandScore").textContent= "Score: " + score;
-        } else if (id == "player3RollButton") {
-            document.getElementById("player3HandScore").textContent= "Score: " + score;
-        }
-    } 
-    if (pig1 == "Leaning Jowler" || pig2 == "Leaning Jowler" ) {
+    } else if (pig1 == "Leaning Jowler" || pig2 == "Leaning Jowler" ) {
         score = score + 15;
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent= "Score: " + score;
