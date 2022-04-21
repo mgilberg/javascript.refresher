@@ -54,18 +54,38 @@ function pass(num,num2,a,b,c,d) {
     
     if (playerTurn == 1) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore1;
-        document.getElementById("player0HandScore").textContent= "Score: " + score;
     } else if (playerTurn == 2) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore2;
-        document.getElementById("player1HandScore").textContent= "Score: " + score;
     } else if (playerTurn == 3) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore3;
-        document.getElementById("player2HandScore").textContent= "Score: " + score;
     } else if (playerTurn == 4) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore4;
-        document.getElementById("player3HandScore").textContent= "Score: " + score;
     }
     
+    
+}
+
+function findPig(i) {
+    picki = Math.floor(Math.random() * 1000) + 1;
+
+    if (picki <= 349) {
+        return "Dot";
+    } else if (picki <= 651 && picki >= 350) {
+        return "No Dot";
+    
+    } else if (picki >= 652 && picki <= 875) {
+        return "Razorback";
+    
+    } else if (picki >=876 && picki <=963) {
+        return "Trotter";
+    
+    } else if (picki >= 964 && picki <= 993) {
+        return "Snouter";
+    
+    } else {
+        return "Leaning Jowler";
+
+    }
 }
 
 function handleClick(id) {
@@ -100,29 +120,6 @@ function handleClick(id) {
     if (id == "player0RollButton" || id == "player1RollButton" || id == "player2RollButton" || id == "player3RollButton") {
     pig1 = findPig(1);
     pig2 = findPig(2);
-
-    function findPig(i) {
-        picki = Math.floor(Math.random() * 1000) + 1;
-
-        if (picki <= 349) {
-            return "Dot";
-        } else if (picki <= 651 && picki >= 350) {
-            return "No Dot";
-        
-        } else if (picki >= 652 && picki <= 875) {
-            return "Razorback";
-        
-        } else if (picki >=876 && picki <=963) {
-            return "Trotter";
-        
-        } else if (picki >= 964 && picki <= 993) {
-            return "Snouter";
-        
-        } else {
-            return "Leaning Jowler";
-
-        }
-    }
     
     if (id == "player0RollButton") {
         document.getElementById("player0Pig1").textContent=pig1;
@@ -138,7 +135,7 @@ function handleClick(id) {
         document.getElementById("player3Pig2").textContent=pig2;
     }
 
-    if (pig1 == "Dot" && pig2 == "No Dot" || pig2 == "Dot" && pig1 == "No Dot") { // will turn this code into function later
+    if ((pig1 == "Dot" && pig2 == "No Dot")|| (pig2 == "Dot" && pig1 == "No Dot")) { // will turn this code into function later
         
         score = 0;
         if (id == "player0RollButton") {
