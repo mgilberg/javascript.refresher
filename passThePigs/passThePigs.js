@@ -51,7 +51,7 @@ function pass(num,num2,a,b,c,d) {
     }
 
     score = 0;
-    
+
     if (playerTurn == 1) {
         document.getElementById("player"+num+"TotalScore").textContent="Total Score: "+totalScore1;
     } else if (playerTurn == 2) {
@@ -154,7 +154,7 @@ function handleClick(id) {
         score = 0;
         playerTurn = playerTurn + 1;
 
-    } else if (pig1 == "Dot" && pig2 == "Dot" || pig1 == "No Dot" && pig2 == "No Dot" || pig1 == "Dot" || pig2 == "Dot" || pig1 == "No Dot" || pig2 == "No Dot") {
+    } else if ((pig1 == "Dot" && pig2 == "Dot") || (pig1 == "No Dot" && pig2 == "No Dot") || pig1 == "Dot" || pig2 == "Dot" || pig1 == "No Dot" || pig2 == "No Dot") {
         score = score + 1;
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent= "Score: " + score;
@@ -166,7 +166,7 @@ function handleClick(id) {
             document.getElementById("player3HandScore").textContent= "Score: " + score;
         }
     } 
-    if (pig1 == "Razorback" && pig2 == "Razorback" || pig1 == "Trotter" && pig2 == "Trotter") {
+    if ((pig1 == "Razorback" && pig2 == "Razorback" )|| (pig1 == "Trotter" && pig2 == "Trotter")) {
         score = score + 20;
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent= "Score: " + score;
@@ -190,7 +190,7 @@ function handleClick(id) {
         }
     } 
 
-     if (pig1 == "Snouter" && pig2 == "Snouter") {
+    if (pig1 == "Snouter" && pig2 == "Snouter") {
         score = score + 40;
         if (id == "player0RollButton") {
             document.getElementById("player0HandScore").textContent= "Score: " + score;
@@ -213,7 +213,6 @@ function handleClick(id) {
             document.getElementById("player3HandScore").textContent= "Score: " + score;
         }
     }  
-
 
     if (pig1 == "Leaning Jowler" && pig2 == "Leaning Jowler") {
         score = score + 60;
